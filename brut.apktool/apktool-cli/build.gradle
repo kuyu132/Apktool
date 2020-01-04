@@ -18,6 +18,7 @@ apply plugin: 'com.github.johnrengelman.shadow'
 dependencies {
     compile depends.commons_cli
     compile project(':brut.apktool:apktool-lib')
+    compile("junit:junit:4.10")
 }
 
 buildscript {

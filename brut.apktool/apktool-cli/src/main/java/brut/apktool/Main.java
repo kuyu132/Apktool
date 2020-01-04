@@ -73,6 +73,7 @@ public class Main {
         boolean cmdFound = false;
         for (String opt : commandLine.getArgs()) {
             if (opt.equalsIgnoreCase("d") || opt.equalsIgnoreCase("decode")) {
+                //开始反编译
                 cmdDecode(commandLine);
                 cmdFound = true;
             } else if (opt.equalsIgnoreCase("b") || opt.equalsIgnoreCase("build")) {
@@ -101,6 +102,13 @@ public class Main {
         }
     }
 
+    /**
+     * 反编译
+     * java -jar /Users/kuyuzhiqi/Documents/android_crack/apktool_2.4.0.jar  -s d /Users/kuyuzhiqi/Downloads/Azrael-debug.apk -o /Users/kuyuzhiqi/Downloads/test
+     *
+     * @param cli
+     * @throws AndrolibException
+     */
     private static void cmdDecode(CommandLine cli) throws AndrolibException {
         ApkDecoder decoder = new ApkDecoder();
 
@@ -109,6 +117,7 @@ public class Main {
         File outDir;
 
         // check for options
+        //生成classes.dex文件,不生成smali文件夹
         if (cli.hasOption("s") || cli.hasOption("no-src")) {
             decoder.setDecodeSources(ApkDecoder.DECODE_SOURCES_NONE);
         }
@@ -293,6 +302,9 @@ public class Main {
         System.out.println(Androlib.getVersion());
     }
 
+    /**
+     * 定义的options，会在CommandLineParser.parse里面根据指令进行匹配
+     */
     @SuppressWarnings("static-access")
     private static void _Options() {
 
