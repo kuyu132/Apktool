@@ -78,6 +78,12 @@ public class ApkDecoder {
         mApi = api;
     }
 
+    /**
+     * 反编译
+     * @throws AndrolibException
+     * @throws IOException
+     * @throws DirectoryException
+     */
     public void decode() throws AndrolibException, IOException, DirectoryException {
         try {
             File outDir = getOutDir();

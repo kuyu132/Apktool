@@ -43,6 +43,12 @@ public class XmlPullStreamDecoder implements ResStreamDecoder {
         this.mSerial = serializer;
     }
 
+    /**
+     * 读取AndroidManifest.xml文件
+     * @param in
+     * @param out
+     * @throws AndrolibException
+     */
     @Override
     public void decode(InputStream in, OutputStream out)
             throws AndrolibException {

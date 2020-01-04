@@ -152,6 +152,9 @@ public class Main {
         if (cli.hasOption("p") || cli.hasOption("frame-path")) {
             decoder.setFrameworkDir(cli.getOptionValue("p"));
         }
+        /**
+         * 情景：原始的manifest里面所有的属性都会放在生成的manifest文件，比如：原始的manifest如果有targetSdkVersion，不使用m命令会放在apktool.yml文件中
+         */
         if (cli.hasOption("m") || cli.hasOption("match-original")) {
             decoder.setAnalysisMode(true, false);
         }

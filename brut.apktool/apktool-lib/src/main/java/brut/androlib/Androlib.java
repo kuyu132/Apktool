@@ -81,6 +81,15 @@ public class Androlib {
         }
     }
 
+    /**
+     * 编译dex文件，输出smali
+     * @param apkFile
+     * @param outDir
+     * @param filename
+     * @param bakdeb
+     * @param api
+     * @throws AndrolibException
+     */
     public void decodeSourcesSmali(File apkFile, File outDir, String filename, boolean bakdeb, int api)
             throws AndrolibException {
         try {
